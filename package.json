@@ -1,0 +1,97 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "grammarmate",
+  "title": "Grammar Mate",
+  "description": "Writing assistant that helps improve your communication by providing suggestions for grammar, spelling, punctuation, clarity, and style.",
+  "icon": "extension-icon.png",
+  "author": "ilya_dyachenko",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "preferences": [
+    {
+      "name": "azureEndpoint",
+      "type": "textfield",
+      "required": true,
+      "title": "OpenAI API Endpoint",
+      "description": "Enter your OpenAI API endpoint",
+      "default": "https://api.openai.com/v1"
+    },
+    {
+      "name": "azureApiKey",
+      "type": "password",
+      "required": true,
+      "title": "OpenAI API Key",
+      "description": "Enter your OpenAI API key"
+    },
+    {
+      "name": "deploymentName",
+      "type": "textfield",
+      "required": true,
+      "title": "Deployment Name",
+      "description": "Enter your OpenAI deployment name",
+      "default": "gpt-4-turbo-preview"
+    }
+  ],
+  "commands": [
+    {
+      "name": "grammarly",
+      "title": "Grammarly",
+      "description": "Check the grammar, style, and spelling of your text.",
+      "mode": "view"
+    },
+    {
+      "name": "rewriter",
+      "title": "Rewriter",
+      "description": "Rewrite your text to improve clarity, style, and tone.",
+      "mode": "view"
+    },
+    {
+      "name": "translator",
+      "title": "Translator",
+      "description": "Translate text between languages.",
+      "mode": "view"
+    },
+    {
+      "name": "awesome",
+      "title": "Awesome English",
+      "description": "You are awesome English assistant!",
+      "mode": "view"
+    },
+    {
+      "name": "addWord",
+      "title": "Add Word to Dictionary",
+      "description": "Add a new word to your personal dictionary",
+      "mode": "view"
+    },
+    {
+      "name": "viewDictionary",
+      "title": "View Dictionary",
+      "description": "View your saved words",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.89.0",
+    "@raycast/utils": "^1.17.0",
+    "nanoid": "^5.0.9",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "20.8.10",
+    "@types/react": "18.3.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
